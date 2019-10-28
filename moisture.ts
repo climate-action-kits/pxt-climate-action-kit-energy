@@ -8,15 +8,15 @@ enum Pin {
 
 enum Mlevel {
     //% block="Very Wet"
-    very_wet,
+    VERY_WET,
     //% block="Wet"
-    wet,
+    WET,
     //% block="Neutral"
-    neutral,
+    NEUTRAL,
     //% block="Dry"
-    dry,
+    DRY,
     //% block="Very Dry"
-    very_dry
+    VERY_DRY
 }
 
 namespace mositure {
@@ -28,8 +28,8 @@ namespace mositure {
         // TODO: Return the pin reading at the listed pin.
     }
 
-    //% block="If moisture level at $pin is $mlevel then..."
-    export function ifMoisture(pin: Pin, mlevel: Mlevel) {
+    //% block="If moisture level at $pin is $mlevel"
+    export function ifMoisture(pin: Pin, mlevel: Mlevel, handler: () => void) {
         // TODO: Create a callback after verifying it is the level specified
     }
 }
