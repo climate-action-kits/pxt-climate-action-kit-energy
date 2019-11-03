@@ -1,0 +1,22 @@
+{
+    "name": "cak",
+    "version": "1.0.3",
+    "description": "Climate Action Kit",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "cak.ts",
+        "moisture.ts",
+        "motion.ts",
+        "pump.ts",
+        "servo.ts",
+        "touch.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": false
+}
