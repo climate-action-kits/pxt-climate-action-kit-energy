@@ -14,7 +14,7 @@ namespace pump {
         //% block
         //% blockId=pump_start block="start %pump pump at speed %speed"
     //% weight=45
-    export function start(pump: Pump speed: number): void {
+    export function start(pump: Pump, speed: number): void {
         pumpControl(pump, speed)
     }
     
