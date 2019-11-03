@@ -12,10 +12,10 @@ namespace pump {
      *Start the pump
         */
         //% block
-        //% blockId=pump_start block="start %pump pump"
+        //% blockId=pump_start block="start %pump pump at speed %speed"
     //% weight=45
-    export function start(pump: Pump): void {
-        pumpControl(pump, 0)
+    export function start(pump: Pump speed: number): void {
+        pumpControl(pump, speed)
     }
     
     /**
