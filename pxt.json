@@ -1,6 +1,6 @@
 {
     "name": "cak",
-    "version": "1.0.3",
+    "version": "1.0.0",
     "description": "Climate Action Kit",
     "license": "MIT",
     "dependencies": {
