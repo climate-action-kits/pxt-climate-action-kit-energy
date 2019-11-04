@@ -9,10 +9,11 @@ enum Pump {
 namespace pump {
 
     /**
-     *Start the pump
-        */
+     * Start the pump
+    */
     //% block
     //% blockId=pump_start block="start %pump pump at speed %speed"
+    //% speed.min=0 speed.max=100
     //% weight=45
     export function start(pump: Pump, speed: number): void {
         pumpControl(pump, speed)
@@ -33,7 +34,8 @@ namespace pump {
      */
     //% block
     //% blockId=pump_duration block="pump the %pump pump at speed %speed for %duration milliseconds"
-    //% speed.min=0 speed.max=10000
+    //% duration.min=0 duration.max=10000
+    //% speed.min=0 speed.max=100
     //% weight=45
     export function startDuration(pump: Pump, speed: number, duration: number): void {
         start(pump, speed)
