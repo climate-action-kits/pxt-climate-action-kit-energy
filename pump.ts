@@ -29,6 +29,19 @@ namespace pump {
     }
 
     /**
+     * Set a pump for a specified time at a specified speed.
+     */
+    //% block
+    //% blockId=pump_duration block="pump the %pump pump at speed %speed for %duration milliseconds"
+    //% speed.min=0 speed.max=10000
+    //% weight=45
+    export function startDuration(pump: Pump, speed: number, duration: number): void {
+        start(pump, speed)
+        basic.pause(duration)
+        stop(pump)
+    }
+
+    /**
      * Advanced control of an individual pump. PWM is set to constant value.
      */
     function pumpControl(whichPump: Pump, speed: number): void {
