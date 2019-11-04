@@ -4,8 +4,7 @@ namespace touch {
      */
     //% block="Read touch sensitivity at pin $pin"
     export function getTouch(pin: cak.Pin): boolean {
-        let analogPin: AnalogPin
-
+        let analogPin
         switch (pin) {
             case (0): analogPin = AnalogPin.P0
             case (1): analogPin = AnalogPin.P1
@@ -13,6 +12,11 @@ namespace touch {
             case (8): analogPin = AnalogPin.P8
             case (12): analogPin = AnalogPin.P12
         }
-        return (pins.analogReadPin(analogPin) > 0)
+        if (pins.analogReadPin(analogPin) > 0) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }
