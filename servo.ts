@@ -14,7 +14,7 @@ enum Position {
     //% block="middle"
     MIDDLE = 0,
     //% block="half down"
-    HALF_DOWN= -40,
+    HALF_DOWN = -40,
     //% block="down"
     DOWN = -85
 }
@@ -54,7 +54,7 @@ namespace servos {
     //% degrees.min=-90 degrees.max=90
     //% weight=60
     //% advanced=true
-     export function turnServo(pin: Pin, degrees: number) {
+    export function turnServo(pin: Pin, degrees: number) {
         // TODO: Write to the specified pin the same code below.
         // pins.servoWritePin(k8.SERVO_1, -degrees + 90)
     }

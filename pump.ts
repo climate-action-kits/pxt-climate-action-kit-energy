@@ -7,22 +7,22 @@ enum Pump {
 
 //% weight=13 color=#43a047 icon=""
 namespace pump {
-    
+
     /**
      *Start the pump
         */
-        //% block
-        //% blockId=pump_start block="start %pump pump at speed %speed"
+    //% block
+    //% blockId=pump_start block="start %pump pump at speed %speed"
     //% weight=45
     export function start(pump: Pump, speed: number): void {
         pumpControl(pump, speed)
     }
-    
+
     /**
      *Stop the pump
         */
-        //% block
-        //% blockId=pump_stop block="stop %pump pump"
+    //% block
+    //% blockId=pump_stop block="stop %pump pump"
     //% weight=45
     export function stop(pump: Pump): void {
         pumpControl(pump, 0)
@@ -54,8 +54,8 @@ namespace pump {
         } else if (s >= 100) {
             returnSpeed = 1023
         } else {
-        returnSpeed = (23200 + (s * 791)) / 100
+            returnSpeed = (23200 + (s * 791)) / 100
         }
         return returnSpeed;
-  }
+    }
 }
