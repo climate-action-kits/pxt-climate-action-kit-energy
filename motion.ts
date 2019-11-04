@@ -26,10 +26,10 @@ namespace motion {
     /**
      *Drives the robot straight at a specified speed
         */
-        //% block
-        //% blockId=motion_drive_straight block="drive straight |speed: %speed"
-        //% speed.min=-100 speed.max=100
-        //% weight=70
+    //% block
+    //% blockId=motion_drive_straight block="drive straight |speed: %speed"
+    //% speed.min=-100 speed.max=100
+    //% weight=70
     export function driveStraight(speed: number): void {
         motorControl(Motor.LEFT, speed)
         motorControl(Motor.RIGHT, speed)
@@ -38,10 +38,10 @@ namespace motion {
     /**
      *Turns the robot to the left at a specified speed
         */
-        //% block
-        //% blockId=motion_turn_left block="turn left |speed: %speed"
-        //% speed.min=0 speed.max=100
-        //% weight=60
+    //% block
+    //% blockId=motion_turn_left block="turn left |speed: %speed"
+    //% speed.min=0 speed.max=100
+    //% weight=60
     export function turnLeft(speed: number): void {
         motorControl(Motor.LEFT, 0)
         motorControl(Motor.RIGHT, speed)
@@ -50,8 +50,8 @@ namespace motion {
     /**
      *Turns the robot to the right at a specified speed
         */
-        //% block
-        //% blockId=motion_turn_right block="turn right |speed: %speed"
+    //% block
+    //% blockId=motion_turn_right block="turn right |speed: %speed"
     //% speed.min=0 speed.max=100
     //% weight=50
     export function turnRight(speed: number): void {
@@ -62,8 +62,8 @@ namespace motion {
     /**
      *Stop the motors
         */
-        //% block
-        //% blockId=motion_stop block="stop motors"
+    //% block
+    //% blockId=motion_stop block="stop motors"
     //% weight=45
     export function stop(): void {
         motorControl(Motor.LEFT, 0)
@@ -147,8 +147,8 @@ namespace motion {
         } else if (s >= 100) {
             returnSpeed = 1023
         } else {
-        returnSpeed = (23200 + (s * 791)) / 100
+            returnSpeed = (23200 + (s * 791)) / 100
         }
         return returnSpeed;
-  }
+    }
 }

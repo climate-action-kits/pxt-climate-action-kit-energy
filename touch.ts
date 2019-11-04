@@ -3,8 +3,8 @@ namespace touch {
      * Returns the value of the touch sensor at a specific pin.
      */
     //% block="Read touch sensitivity at pin $pin"
-    export function getTouch(pin: cak.Pin) : boolean {
-        let analogPin : AnalogPin
+    export function getTouch(pin: cak.Pin): boolean {
+        let analogPin: AnalogPin
 
         switch (pin) {
             case (0): analogPin = AnalogPin.P0

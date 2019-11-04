@@ -19,8 +19,8 @@ namespace pump {
     }
 
     /**
-     *Stop the pump
-        */
+     * Stop the pump
+     */
     //% block
     //% blockId=pump_stop block="stop %pump pump"
     //% weight=45
@@ -33,7 +33,6 @@ namespace pump {
      */
     function pumpControl(whichPump: Pump, speed: number): void {
         let pumpSpeed: number
-
 
         pumpSpeed = remapSpeed(speed)
 
