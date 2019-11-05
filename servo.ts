@@ -21,8 +21,8 @@ namespace servos {
     //% weight=60
     export function setServoPosition(pin: cak.Pin, position: Position) {
         let n: number = position
-        let analogPin : AnalogPin
-        switch(pin) {
+        let analogPin: AnalogPin
+        switch (pin) {
             case (0): analogPin = AnalogPin.P0
             case (1): analogPin = AnalogPin.P1
             case (2): analogPin = AnalogPin.P2
@@ -60,7 +60,7 @@ namespace servos {
     //% weight=60
     //% advanced=true
     export function turnServo(pin: cak.Pin, degrees: number) {
-        
+
         let analogPin: AnalogPin
         switch (pin) {
             case (0): analogPin = AnalogPin.P0
