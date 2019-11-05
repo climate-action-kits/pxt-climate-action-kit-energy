@@ -19,17 +19,9 @@ namespace servos {
     //% block
     //% blockId=servo_set block="set servo at %pin to |position: %position"
     //% weight=60
-    export function setServoPosition(pin: cak.Pin, position: Position) {
+    export function setServoPosition(pin: AnalogPin, position: Position) {
         let n: number = position
-        let analogPin: AnalogPin
-        switch (pin) {
-            case (0): analogPin = AnalogPin.P0
-            case (1): analogPin = AnalogPin.P1
-            case (2): analogPin = AnalogPin.P2
-            case (8): analogPin = AnalogPin.P8
-            case (12): analogPin = AnalogPin.P12
-        }
-        pins.servoWritePin(analogPin, -n + 90)
+        pins.servoWritePin(pin, -n + 90)
     }
 
     /**
@@ -38,16 +30,8 @@ namespace servos {
     //% block
     //% blockId=servos_reset block="reset servo at %pin"
     //% weight=40
-    export function resetServos(pin: cak.Pin) {
-        let analogPin: AnalogPin
-        switch (pin) {
-            case (0): analogPin = AnalogPin.P0
-            case (1): analogPin = AnalogPin.P1
-            case (2): analogPin = AnalogPin.P2
-            case (8): analogPin = AnalogPin.P8
-            case (12): analogPin = AnalogPin.P12
-        }
-        pins.servoWritePin(analogPin, 90)
+    export function resetServos(pin: AnalogPin) {
+        pins.servoWritePin(pin, 90)
     }
 
     /**
@@ -59,16 +43,7 @@ namespace servos {
     //% degrees.min=-90 degrees.max=90
     //% weight=60
     //% advanced=true
-    export function turnServo(pin: cak.Pin, degrees: number) {
-
-        let analogPin: AnalogPin
-        switch (pin) {
-            case (0): analogPin = AnalogPin.P0
-            case (1): analogPin = AnalogPin.P1
-            case (2): analogPin = AnalogPin.P2
-            case (8): analogPin = AnalogPin.P8
-            case (12): analogPin = AnalogPin.P12
-        }
-        pins.servoWritePin(analogPin, -degrees + 90)
+    export function turnServo(pin: AnalogPin, degrees: number) {
+        pins.servoWritePin(pin, -degrees + 90)
     }
 }
