@@ -13,7 +13,9 @@
         "motion.ts",
         "pump.ts",
         "servo.ts",
-        "touch.ts"
+        "touch.ts",
+        "motor.ts",
+        "soil.ts"
     ],
     "testFiles": [
         "test.ts"
