@@ -5,7 +5,7 @@ enum Pump {
     RIGHT = 1
 }
 
-//% weight=13 color=#43a047 icon=""
+//% weight=13 color=#01579b icon=""
 namespace pump {
 
     /**

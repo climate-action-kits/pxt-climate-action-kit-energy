@@ -19,8 +19,8 @@ enum MotorPower {
     OFF
 }
 
-//% weight=13 color=#43a047 icon=""
-namespace motion {
+//% weight=13 color=#e8ea38 icon=""
+namespace motor {
     let motorState: MotorPower = MotorPower.ON
 
     /**
@@ -107,7 +107,7 @@ namespace motion {
     //% advanced=true
     export function setPowers(power: MotorPower): void {
         if (power == MotorPower.OFF) {
-            motion.stop()
+            motor.stop()
         }
         motorState = power
     }

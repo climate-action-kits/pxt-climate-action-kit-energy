@@ -1,14 +1,14 @@
 {
     // Motors
-    motion.driveStraight(50)
+    motor.driveStraight(50)
     basic.pause(1000)
-    motion.driveStraight(-50)
+    motor.driveStraight(-50)
     basic.pause(1000)
-    motion.turnLeft(50)
+    motor.turnLeft(50)
     basic.pause(1000)
-    motion.turnRight(50)
+    motor.turnRight(50)
     basic.pause(1000)
-    motion.setPowers(MotorPower.OFF)
+    motor.setPowers(MotorPower.OFF)
 
    
     // // Servos

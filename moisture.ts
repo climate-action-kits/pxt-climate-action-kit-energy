@@ -9,7 +9,8 @@ enum Mlevel {
     VERY_DRY = 0
 }
 
-namespace mositure {
+//% weight=13 color=#ff6700 icon=""
+namespace soil {
     /**
      * Returns the value of the moisture sensor at a specific pin.
      */

@@ -11,7 +11,7 @@ enum Position {
     DOWN = -85
 }
 
-//% weight=10 color=#01579B icon=""
+//% weight=10 color=#ab47bc icon=""
 namespace servos {
     /**
      * Move specified servo to the selected position
