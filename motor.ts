@@ -19,7 +19,7 @@ enum MotorPower {
     OFF
 }
 
-//% weight=13 color=#e8ea38 icon=""
+//% weight=10 color=#e8ea38 icon=""
 namespace motor {
     let motorState: MotorPower = MotorPower.ON
 

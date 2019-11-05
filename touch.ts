@@ -1,4 +1,4 @@
-//% weight=13 color=#e8ea38 icon=""
+//% weight=10 color=#007A4B icon=""
 namespace touch {
     /**
      * Returns the value of the touch sensor at a specific pin.
