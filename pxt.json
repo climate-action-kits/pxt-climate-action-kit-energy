@@ -9,8 +9,6 @@
     "files": [
         "README.md",
         "cak.ts",
-        "moisture.ts",
-        "motion.ts",
         "pump.ts",
         "servo.ts",
         "touch.ts",
