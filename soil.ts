@@ -44,11 +44,11 @@ namespace soil {
       //       }
       //   }
     
-        /**
-    * Michael: This should display the current moisture reading to leds.
-    * I hacked this together from the k8 Sonar file, I want to display the moisture level
-    * from 0-1023 as an LED graph.
-    */
+      //  /**
+      //    * Michael: This should display the current moisture reading to leds.
+      //    * I hacked this together from the k8 Sonar file, I want to display the moisture level
+      //    * from 0-1023 as an LED graph.
+      // */
       //  //% block
       //  //% weight=40
       // export function displayMoisture(): void {
