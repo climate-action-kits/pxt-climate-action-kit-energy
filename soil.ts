@@ -49,10 +49,10 @@ namespace soil {
     * I hacked this together from the k8 Sonar file, I want to display the moisture level
     * from 0-1023 as an LED graph.
     */
-    //% block
-    //% weight=40
-    export function displayMoisture(): void {
-        led.plotBarGraph(getMoisture(pin: AnalogPin), 1023)
-    }
+      //  //% block
+      //  //% weight=40
+      // export function displayMoisture(): void {
+      //     led.plotBarGraph(getMoisture(pin: AnalogPin), 1023)
+      //    }
     
 }
