@@ -1,8 +1,6 @@
 {
     // Motors
-    motor.driveStraight(50)
     basic.pause(1000)
-    motor.driveStraight(-50)
     basic.pause(1000)
     motor.turnLeft(50)
     basic.pause(1000)

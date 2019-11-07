@@ -1,8 +1,8 @@
 enum Mlevel {
     //% block="Very Wet"
-    VERY_WET = 600,
+    VERY_WET = 750,
     //% block="Wet"
-    WET = 450,
+    WET = 500,
     //% block="Dry"
     DRY = 250,
     //% block="Very Dry"
@@ -13,46 +13,38 @@ enum Mlevel {
 namespace soil {
     /**
      * Returns the value of the moisture sensor at a specific pin.
-     * Michael: there need to be two blocks here
-     * one block should check the moisture level like the k8 IR sensor block, ie:
-     * it should return a boolean depending on a dropdown of Very Dry/Dry/Wet/Very Wet (like the 
-     * commented out block below?
-     * Please add another block that returns moistureLevel as a value from 0-1023.
      */
     //% block="If moisture level at pin $pin is ____"
-    export function getMoisture(pin: AnalogPin): Mlevel {
-        let moistureLevel = pins.analogReadPin(pin)
+    export function getMoisture(pin: AnalogPin): number {
+        return pins.analogReadPin(pin)
+    }
 
-        if (moistureLevel > Mlevel.VERY_WET) {
-            return Mlevel.VERY_WET
+
+    /**
+     * Runs a specific function if the moisture value is between the two passed moisture levels
+     */
+    //% block="If moisture level at $pin is between $mlevel and $mlevel2"
+    export function ifMoisture(pin: AnalogPin, mlevel: Mlevel, mlevel2: Mlevel, handler: () => void) {
+        let moistureLevel = getMoisture(pin)
+        if (moistureLevel >= mlevel) {
+            if (moistureLevel <= mlevel2) {
+                handler()
+            }
         }
-        else if (moistureLevel > Mlevel.WET) {
-            return Mlevel.WET
-        }
-        else if (moistureLevel > Mlevel.DRY) {
-            return Mlevel.DRY
-        }
-        else {
-            return Mlevel.VERY_DRY
+        else if (moistureLevel >= mlevel2) {
+            if (moistureLevel <= mlevel) {
+                handler()
+            }
         }
     }
 
-      //   //% block="If moisture level at $pin is $mlevel"
-      //   export function ifMoisture(pin: AnalogPin, mlevel: Mlevel, handler: () => void) {
-      //       if (getMoisture(pin) > mlevel) {
-      //           handler()   
-      //       }
-      //   }
-    
-      //  /**
-      //    * Michael: This should display the current moisture reading to leds.
-      //    * I hacked this together from the k8 Sonar file, I want to display the moisture level
-      //    * from 0-1023 as an LED graph.
-      // */
-      //  //% block
-      //  //% weight=40
-      // export function displayMoisture(): void {
-      //     led.plotBarGraph(getMoisture(pin: AnalogPin), 1023)
-      //    }
-    
+    /**
+     * Displays the read moisture level on the LED grid
+     */
+    //% block="moisture at pin %pin to LED"
+    //% weight=40
+    export function displayMoisture(pin: AnalogPin): void {
+        led.plotBarGraph(getMoisture(pin), 1023)
+    }
+
 }
