@@ -19,44 +19,32 @@ enum MotorPower {
     OFF
 }
 
-//% weight=13 color=#e8ea38 icon=""
+//% weight=13 color=#ffd43a icon=""
 namespace motor {
     let motorState: MotorPower = MotorPower.ON
 
     /**
-     *Drives the robot straight at a specified speed
+     *Turns the left motor at a specified speed
         */
     //% block
-    //% blockId=motion_drive_straight block="drive straight |speed: %speed"
+    //% blockId=motion_turn_left block="turn left motor at |speed: %speed"
     //% speed.min=-100 speed.max=100
-    //% weight=70
-    export function driveStraight(speed: number): void {
-        motorControl(Motor.LEFT, speed)
-        motorControl(Motor.RIGHT, speed)
-    }
-
-    /**
-     *Turns the robot to the left at a specified speed
-        */
-    //% block
-    //% blockId=motion_turn_left block="turn left |speed: %speed"
-    //% speed.min=0 speed.max=100
     //% weight=60
     export function turnLeft(speed: number): void {
-        motorControl(Motor.LEFT, 0)
-        motorControl(Motor.RIGHT, speed)
+        motorControl(Motor.RIGHT, 0)
+        motorControl(Motor.LEFT, speed)
     }
 
     /**
-     *Turns the robot to the right at a specified speed
+     *Turns the right motor at a specified speed
         */
     //% block
-    //% blockId=motion_turn_right block="turn right |speed: %speed"
-    //% speed.min=0 speed.max=100
+    //% blockId=motion_turn_right block="turn right motor at |speed: %speed"
+    //% speed.min=-100 speed.max=100
     //% weight=50
     export function turnRight(speed: number): void {
-        motorControl(Motor.LEFT, speed)
-        motorControl(Motor.RIGHT, 0)
+        motorControl(Motor.RIGHT, speed)
+        motorControl(Motor.LEFT, 0)
     }
 
     /**
@@ -80,22 +68,9 @@ namespace motor {
     //% leftWheelSpeed.min=-100 leftWheelSpeed.max=100
     //% rightWheelSpeed.min=-100 rightWheelSpeed.max=100
     //% weight=40
-    //% advanced=true
     export function drive(leftWheelSpeed: number, rightWheelSpeed: number): void {
         motorControl(Motor.LEFT, leftWheelSpeed)
         motorControl(Motor.RIGHT, rightWheelSpeed)
-    }
-
-    /**
-    * Control the speed and direction of a single wheel
-    */
-    //% block
-    //% blockId=motion_single block="drive |wheel: %wheel|speed: %speed"
-    //% speed.min=0 speed.max=100
-    //% weight=30
-    //% advanced=true
-    export function driveWheel(wheel: Motor, speed: number): void {
-        motorControl(wheel, speed)
     }
 
     /**
@@ -104,7 +79,6 @@ namespace motor {
     //% block
     //% blockId=motion_power block="turn motors |power: %power"
     //% weight=20
-    //% advanced=true
     export function setPowers(power: MotorPower): void {
         if (power == MotorPower.OFF) {
             motor.stop()

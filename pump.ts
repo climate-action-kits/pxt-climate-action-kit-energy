@@ -33,13 +33,13 @@ namespace pump {
      * Set a pump for a specified time at a specified speed.
      */
     //% block
-    //% blockId=pump_duration block="pump the %pump pump at speed %speed for %duration milliseconds"
-    //% duration.min=0 duration.max=10000
+    //% blockId=pump_duration block="run the %pump pump at speed %speed for %duration seconds"
+    //% duration.min=0 duration.max=10
     //% speed.min=0 speed.max=100
     //% weight=45
     export function startDuration(pump: Pump, speed: number, duration: number): void {
         start(pump, speed)
-        basic.pause(duration)
+        basic.pause(duration*1000)
         stop(pump)
     }
 

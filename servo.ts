@@ -39,10 +39,9 @@ namespace servos {
      * 0 is home, -90, 90 are the limits backward and forward
      */
     //% block
-    //% blockId=servo_turn_degrees block="turn servo at %pin |degrees: %degrees"
+    //% blockId=servo_turn_degrees block="turn servo at %pin to |degrees: %degrees"
     //% degrees.min=-90 degrees.max=90
     //% weight=60
-    //% advanced=true
     export function turnServo(pin: AnalogPin, degrees: number) {
         pins.servoWritePin(pin, -degrees + 90)
     }
