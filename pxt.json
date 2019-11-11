@@ -13,8 +13,7 @@
         "servo.ts",
         "touch.ts",
         "motor.ts",
-        "soil.ts",
-        "pins.ts"
+        "soil.ts"
     ],
     "testFiles": [
         "test.ts"
