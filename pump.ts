@@ -33,7 +33,7 @@ namespace pump {
      * Set a pump for a specified time at a specified speed.
      */
     //% block
-    //% blockId=pump_duration block="run the %pump pump at speed %speed for %duration seconds"
+    //% blockId=pump_duration block="run %pump pump at speed %speed for %duration seconds"
     //% duration.min=0 duration.max=10
     //% speed.min=0 speed.max=100
     //% weight=45
