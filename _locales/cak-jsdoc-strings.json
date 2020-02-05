@@ -1,0 +1,17 @@
+{
+  "motor.drive": "Control both wheels in one function.\r\nSpeeds range from -100 to 100.\r\nNegative speeds go backwards, positive go forwards.",
+  "motor.setPowers": "Turn the motors on/off - default on",
+  "motor.stop": "Stop the motors",
+  "motor.turnLeft": "Turns the left motor at a specified speed",
+  "motor.turnRight": "Turns the right motor at a specified speed",
+  "pump.start": "Start the pump",
+  "pump.startDuration": "Set a pump for a specified time at a specified speed.",
+  "pump.stop": "Stop the pump",
+  "servos.resetServos": "Move specified servo back to home position",
+  "servos.setServoPosition": "Move specified servo to the selected position",
+  "servos.turnServo": "Move specified servo to the given position in degrees. \n0 is home, -90, 90 are the limits backward and forward",
+  "soil.displayMoisture": "Displays the read moisture level on a vertical bar graph up to full scale.",
+  "soil.getMoisture": "Returns the value of the moisture sensor at a specific pin.",
+  "soil.ifMoisture": "Runs a specific function if the moisture value is below the selected moisture level",
+  "touch.getTouch": "Returns the value of the touch sensor at a specific pin."
+}

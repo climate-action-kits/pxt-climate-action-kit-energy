@@ -13,7 +13,9 @@
         "servo.ts",
         "touch.ts",
         "motor.ts",
-        "soil.ts"
+        "soil.ts",
+		"_locales/fr/cak-jsdoc-strings.json",
+		"_locales/fr/cak-strings.json"
     ],
     "testFiles": [
         "test.ts"
