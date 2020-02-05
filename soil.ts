@@ -41,17 +41,31 @@ namespace soil {
     }
 
 
+
     /**
-     * Runs a specific function if the moisture value is below the selected moisture level
-     */
-    //% block="on moisture level at $pin is below $mlevel"
-    export function ifMoisture(pin: SoilPin, mlevel: Mlevel, handler: () => void) {
-        let moistureLevel = getMoisture(pin)
-        if (moistureLevel <= mlevel) {
-            handler()
+         * Returns a boolean value based on if the moisture sensor at a specific pin is in a specified range of moisture.
+         */
+    //% block="moisture level at pin $pin is %Mlevel"
+    export function ifMoisture(pin: SoilPin, level: Mlevel): boolean {
+        let moisture = getMoisture(pin);
+        switch (level) {
+            case Mlevel.VERY_DRY: {
+                return (moisture >= 0 && moisture <= 100);
+                break;
+            }
+            case Mlevel.DRY: {
+                return (moisture > 100 && moisture <= 200);
+                break;
+            }
+            case Mlevel.WET: {
+                return (moisture > 200 && moisture <= 500);
+                break;
+            }
+            case Mlevel.VERY_WET: {
+                return (moisture > 500);
+            }
         }
-
-
+        return false;
     }
 
     /**
