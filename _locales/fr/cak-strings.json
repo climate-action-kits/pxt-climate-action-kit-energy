@@ -32,7 +32,7 @@
     "servos|block": "servos",
     "soil.displayMoisture|block": "afficher taux d’humidité à %pin",
     "soil.getMoisture|block": "taux d’humidité à la broche $pin",
-    "soil.ifMoisture|block": "lorsque le taux d’humidité à %pin est au-dessous de %mlevel",
+    "soil.ifMoisture|block": "lorsque le taux d’humidité à $pin est au-dessous de %Mlevel",
     "soil|block": "terre",
     "touch.getTouch|block": "lorsque $pin est touchée", 
     "touch|block": "toucher",
