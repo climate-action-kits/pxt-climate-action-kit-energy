@@ -15,9 +15,9 @@
         "motor.ts",
         "soil.ts",
         "_locales/fr/cak-jsdoc-strings.json",
-        "_locales/fr/cak-jsdoc-strings.json",
+        "_locales/es/cak-jsdoc-strings.json",
         "_locales/es/cak-strings.json",
-        "_locales/es/cak-strings.json"
+        "_locales/fr/cak-strings.json"
     ],
     "testFiles": [
         "test.ts"
