@@ -32,7 +32,7 @@
 	"servos|block": "servos",
 	"soil.displayMoisture|block": "mostrar nivel de humedad en %pin",
 	"soil.getMoisture|block": "nivel de humedad en pin $pin",
-	"soil.ifMoisture|block": "activar nivel de humedad en $pin está abajo $mlevel",
+	"soil.ifMoisture|block": "activar nivel de humedad en $pin está abajo %mlevel",
 	"soil|block": "suelo",
 	"touch.getTouch|block": "encender contacto en $pin",
 	"touch|block": "contacto",
