@@ -1,0 +1,17 @@
+{
+  "motor.drive": "Controlar ambas ruedas en una función.\r\nRango de velocidades de -100 a 100.\r\nVelocidades negativas van hacia atrás, positivas van hacia adelante.",
+  "motor.setPowers": "Activar los motores encendido/apagado - predeterminado encendido",
+  "motor.stop": "Detener los motores.",
+  "motor.turnLeft": "Gira el motor izquierdo a una velocidad específica.",
+  "motor.turnRight": "Gira el motor derecho a una velocidad específica.",
+  "pump.start": "Encender la bomba.",
+  "pump.startDuration": "Ajustar una bomba a un tiempo específico y a una velocidad específica.",
+  "pump.stop": "Detener la bomba.",
+  "servos.resetServos": "Mover el servo seleccionado a su posición de inicio.",
+  "servos.setServoPosition": "Mover el servo a la posición seleccionada.",
+  "servos.turnServo": "Mover el servo especificado a la posición determinada en grados. \r\n0 es inicio, -90, 90 son los límites hacia atrás y hacia adelante.",
+  "soil.displayMoisture": "Muestra el nivel de humedad determinado en un gráfico de barras verticales hasta una escala completa.",
+  "soil.getMoisture": "Devuelve el valor del sensor de humedad a un pin específico.",
+  "soil.ifMoisture": "Ejecuta una función específica si el valor de humedad está por debajo del nivel de humedad seleccionado.",
+  "touch.getTouch": "Devuelve el valor del sensor táctil a un pin específico."
+}
