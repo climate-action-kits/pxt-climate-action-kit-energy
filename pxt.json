@@ -9,14 +9,14 @@
     "files": [
         "README.md",
         "cak.ts",
+        "light.ts",
+        "motor.ts",
         "pump.ts",
         "servo.ts",
-        "touch.ts",
-        "motor.ts",
         "soil.ts",
+        "sonar.ts",
+        "touch.ts",
         "_locales/fr/cak-jsdoc-strings.json",
-        "_locales/es/cak-jsdoc-strings.json",
-        "_locales/es/cak-strings.json",
         "_locales/fr/cak-strings.json"
     ],
     "testFiles": [
