@@ -3,7 +3,7 @@
  */
 //% weight=11 color=#ff6f00 icon=""
 namespace sonar {
-    enum Comparison {
+    export enum Comparison {
         //% block="closer"
         CLOSER,
         //% block="further"
