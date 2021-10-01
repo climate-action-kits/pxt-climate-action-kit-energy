@@ -1,20 +1,19 @@
-enum Luminance {
-    //% block="Intense"
-    INTENSE = 25,
-    //% block="Bright"
-    BRIGHT = 65,
-    //% block="Lit"
-    LIT = 100,
-    //% block="Shaded"
-    SHADED = 200,
-    //% block="Dark"
-    DARK = 400,
-    //% block="Lightless"
-    LIGHTLESS = 800,
-}
-    
 //% weight=10 icon="🔆"
 namespace light {
+    export enum Luminance {
+        //% block="Intense"
+        Intense = 25,
+        //% block="Bright"
+        Bright = 65,
+        //% block="Lit"
+        Lit = 100,
+        //% block="Shaded"
+        Shaded = 200,
+        //% block="Dark"
+        Dark = 400,
+        //% block="Lightless"
+        Lightless = 800,
+    }
 
     export enum LightPin {
         P0,
@@ -54,12 +53,12 @@ namespace light {
     export function ifLuminance(pin: LightPin, level: Luminance): boolean {
         let lum = getLuminance(pin);
         switch (level) {
-            case Luminance.INTENSE: return lum <= Luminance.INTENSE;
-            case Luminance.BRIGHT: return lum > Luminance.INTENSE && lum <= Luminance.BRIGHT;
-            case Luminance.LIT: return lum > Luminance.BRIGHT && lum <= Luminance.LIT;
-            case Luminance.SHADED: return lum > Luminance.LIT && lum <= Luminance.SHADED;
-            case Luminance.DARK: return lum > Luminance.SHADED && lum <= Luminance.DARK;
-            case Luminance.LIGHTLESS: return lum > Luminance.DARK;
+            case Luminance.Intense: return lum <= Luminance.Intense;
+            case Luminance.Bright: return lum > Luminance.Intense && lum <= Luminance.Bright;
+            case Luminance.Lit: return lum > Luminance.Bright && lum <= Luminance.Lit;
+            case Luminance.Shaded: return lum > Luminance.Lit && lum <= Luminance.Shaded;
+            case Luminance.Dark: return lum > Luminance.Shaded && lum <= Luminance.Dark;
+            case Luminance.Lightless: return lum > Luminance.Dark;
         }
     }
 

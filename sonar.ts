@@ -1,15 +1,15 @@
-enum Comparison {
-    //% block="closer"
-    CLOSER,
-    //% block="further"
-    FURTHER
-}
-
 /**
  * Sonar and ping utilities
  */
 //% weight=11 color=#ff6f00 icon=""
 namespace sonar {
+    enum Comparison {
+        //% block="closer"
+        CLOSER,
+        //% block="further"
+        FURTHER
+    }
+
     const UNITS = 38; //approx ms per cm as measured by ross-inksmith
     /**
      * Send a ping and get the echo time (in microseconds) as a result
@@ -19,7 +19,6 @@ namespace sonar {
      */
     //% blockId=sonar_ping block="ping trig %trig|echo %echo"
     export function ping(echo: DigitalPin = cak.SONAR_ECHO, trig: DigitalPin = cak.SONAR_TRIG, maxCmDistance = 500): number {
-        //
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
         pins.digitalWritePin(trig, 0);
