@@ -58,8 +58,8 @@ namespace sonar {
     export function isSonar(Direction: Comparison, range: number): boolean {
         let distance = checkSonar();
         switch (Direction) {
-            case Direction.CLOSER: return distance < range;
-            case Direction.FURTHER: return distance > range;
+            case Comparison.CLOSER: return distance < range;
+            case Comparison.FURTHER: return distance > range;
             default: return false;
         }
     }

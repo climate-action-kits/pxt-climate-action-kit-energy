@@ -1,4 +1,4 @@
-//% weight=10 icon="🔆"
+//% weight=10 icon="\uf185"
 namespace light {
     export enum Luminance {
         //% block="Intense"
@@ -29,7 +29,7 @@ namespace light {
     function getLightPin (pin: LightPin): AnalogPin {
         switch (pin) {
             case LightPin.P0: return AnalogPin.P0
-            case LightPin.P1: return AnalogPin.P#
+            case LightPin.P1: return AnalogPin.P1
             case LightPin.P2: return AnalogPin.P2
             case LightPin.P8: return AnalogPin.P8
             case LightPin.P12: return AnalogPin.P12
