@@ -42,7 +42,7 @@ namespace sonar {
     export function checkSonar(): number {
         let list = [0, 0, 0, 0, 0];
 
-        list = list.map(() => ping().sort();
+        list = list.map(() => ping()).sort();
 
         return list[2];
     }
