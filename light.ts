@@ -68,7 +68,7 @@ namespace light {
     //% weight=40
     export function displayLuminance(pin: LightPin): void {
         let lum = 1000 - getLuminance(pin);
-        led.plotBarGraph(graphDots, 1000);
+        led.plotBarGraph(lum, 1000);
     }
 
 }
