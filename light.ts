@@ -1,4 +1,4 @@
-//% weight=10 icon="🔆"
+//% weight=10 icon="\uf185"
 namespace light {
     export enum Luminance {
         //% block="Intense"
