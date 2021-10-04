@@ -18,7 +18,9 @@ namespace sonar {
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
     //% blockId=sonar_ping block="ping trig %trig|echo %echo"
-    export function ping(echo: DigitalPin = cak.SONAR_ECHO, trig: DigitalPin = cak.SONAR_TRIG, maxCmDistance = 500): number {
+    export function ping(echo: DigitalPin = null, trig: DigitalPin = null, maxCmDistance = 500): number {
+        trig = trig || cak.SONAR_TRIG;
+        echo = echo || cak.SONAR_ECHO;
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
         pins.digitalWritePin(trig, 0);
