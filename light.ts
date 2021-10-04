@@ -1,4 +1,4 @@
-//% weight=10 icon="\uf185"
+//% weight=10 icon="🔆"
 namespace light {
     export enum Luminance {
         //% block="Intense"
@@ -15,12 +15,13 @@ namespace light {
         Lightless = 800,
     }
 
+    /*
+     * (P8 & P12 are digital only)
+     */
     export enum LightPin {
         P0,
         P1,
         P2,
-        P8,
-        P12
     }
 
     /*
@@ -31,8 +32,6 @@ namespace light {
             case LightPin.P0: return AnalogPin.P0
             case LightPin.P1: return AnalogPin.P1
             case LightPin.P2: return AnalogPin.P2
-            case LightPin.P8: return AnalogPin.P8
-            case LightPin.P12: return AnalogPin.P12
             default: return AnalogPin.P0
         }
     }
@@ -54,10 +53,10 @@ namespace light {
         let lum = getLuminance(pin);
         switch (level) {
             case Luminance.Intense: return lum <= Luminance.Intense;
-            case Luminance.Bright: return lum > Luminance.Intense && lum <= Luminance.Bright;
-            case Luminance.Lit: return lum > Luminance.Bright && lum <= Luminance.Lit;
-            case Luminance.Shaded: return lum > Luminance.Lit && lum <= Luminance.Shaded;
-            case Luminance.Dark: return lum > Luminance.Shaded && lum <= Luminance.Dark;
+            case Luminance.Bright: return lum > Luminance.Intense && lum <= Luminance.Lit;
+            case Luminance.Lit: return lum > Luminance.Bright && lum <= Luminance.Shaded;
+            case Luminance.Shaded: return lum > Luminance.Lit && lum <= Luminance.Dark;
+            case Luminance.Dark: return lum > Luminance.Shaded && lum <= Luminance.Lightless;
             case Luminance.Lightless: return lum > Luminance.Dark;
         }
     }
@@ -65,11 +64,11 @@ namespace light {
     /**
      * Convenience function to transform and graph luminance
      */
-    //% block="display moisture level at %pin"
+    //% block="display light level at %pin"
     //% weight=40
     export function displayLuminance(pin: LightPin): void {
         let lum = 1000 - getLuminance(pin);
-        led.plotBarGraph(lum, 1000);
+        led.plotBarGraph(graphDots, 1000);
     }
 
 }
