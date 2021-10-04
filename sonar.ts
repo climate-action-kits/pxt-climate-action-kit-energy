@@ -3,7 +3,7 @@
  */
 //% weight=11 color=#ff6f00 icon=""
 namespace sonar {
-    enum Comparison {
+    export enum Comparison {
         //% block="closer"
         CLOSER,
         //% block="further"
@@ -18,7 +18,7 @@ namespace sonar {
      * @param maxCmDistance maximum distance in centimeters (default is 500)
      */
     //% blockId=sonar_ping block="ping trig %trig|echo %echo"
-    export function ping(echo: DigitalPin, trig: DigitalPin, maxCmDistance = 500): number {
+    export function ping(echo: DigitalPin = null, trig: DigitalPin = null, maxCmDistance = 500): number {
         echo = echo || cak.SONAR_ECHO;
         trig = trig || cak.SONAR_TRIG;
         // send pulse
@@ -44,7 +44,7 @@ namespace sonar {
     export function checkSonar(): number {
         let list = [0, 0, 0, 0, 0];
 
-        list = list.map(() => ping().sort();
+        list = list.map(() => ping()).sort();
 
         return list[2];
     }
@@ -60,8 +60,8 @@ namespace sonar {
     export function isSonar(Direction: Comparison, range: number): boolean {
         let distance = checkSonar();
         switch (Direction) {
-            case Direction.CLOSER: return distance < range;
-            case Direction.FURTHER: return distance > range;
+            case Comparison.CLOSER: return distance < range;
+            case Comparison.FURTHER: return distance > range;
             default: return false;
         }
     }

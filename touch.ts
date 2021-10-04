@@ -1,4 +1,4 @@
-//% weight=10 color=#007A4B icon="🔆"
+//% weight=10 color=#007A4B icon=""
 namespace touch {
 
     export enum TouchPin {
