@@ -1,10 +1,11 @@
-# climate-action-kit
+# energy-climate-action-kit
+Library to interact with the Energy Climate Action Kit
 
-This library provides functions to interface with the components of the InkSmith Climate Action Kit. 
+This library provides functions to interface with the components of the InkSmith Energy Climate Action Kit. 
 
-More information at https://www.inksmith.ca/pages/climate-action-kits.
+More information at https://www.inksmith.ca/pages/energy-climate-action-kits.
 
-Link to online teacher facing curriculum: https://inksmith.teachable.com/p/land (for free sign up, use coupon code "LANDKIT" at course registration)
+Link to online teacher facing curriculum: https://inksmith.teachable.com/p/energy (for free sign up, use coupon code "ENERGYKIT" at course registration)
 
 ## Example Usage
 To drive forward, then backward
