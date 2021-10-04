@@ -1,4 +1,4 @@
-# energy-climate-action-kit
+# climate-action-kit-energy
 Library to interact with the Energy Climate Action Kit
 
 This library provides functions to interface with the components of the InkSmith Energy Climate Action Kit. 
