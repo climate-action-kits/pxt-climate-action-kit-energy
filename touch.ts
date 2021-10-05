@@ -46,7 +46,7 @@ namespace touch {
      * Returns true so long as button is pressed
      */
     //% block="on touch at $pin"
-    export function getTouch(pin: TouchPin): boolean {
+    function getTouch(pin: TouchPin): boolean {
         // Return bool associated with the pin reading
         if (pins.digitalReadPin(getTouchPin(pin)) > 0) {
             return true
