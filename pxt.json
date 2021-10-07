@@ -13,9 +13,7 @@
         "motor.ts",
         "servo.ts",
         "sonar.ts",
-        "touch.ts",
-        "_locales/fr/cak-jsdoc-strings.json",
-        "_locales/fr/cak-strings.json"
+        "touch.ts"
     ],
     "testFiles": [
         "test.ts"
