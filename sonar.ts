@@ -5,9 +5,9 @@
 namespace sonar {
     export enum Comparison {
         //% block="closer"
-        CLOSER,
+        Closer,
         //% block="further"
-        FURTHER
+        Further
     }
 
     const UNITS = 38; //approx ms per cm as measured by ross-inksmith
@@ -60,8 +60,8 @@ namespace sonar {
     export function isSonar(Direction: Comparison, range: number): boolean {
         let distance = checkSonar();
         switch (Direction) {
-            case Comparison.CLOSER: return distance < range;
-            case Comparison.FURTHER: return distance > range;
+            case Comparison.Closer: return distance < range;
+            case Comparison.Further: return distance > range;
             default: return false;
         }
     }
