@@ -103,13 +103,13 @@ namespace motor {
         motorSpeed = remapSpeed(speed)
 
         if (whichMotor == Motor.LEFT) {
-            pins.digitalWritePin(cak.M1_DIR, direction)
-            pins.analogSetPeriod(cak.M1_PWR, 1024)
-            pins.analogWritePin(cak.M1_PWR, motorSpeed)
+            pins.digitalWritePin(cakEnergy.M1_DIR, direction)
+            pins.analogSetPeriod(cakEnergy.M1_PWR, 1024)
+            pins.analogWritePin(cakEnergy.M1_PWR, motorSpeed)
         } else {
-            pins.digitalWritePin(cak.M2_DIR, direction)
-            pins.analogSetPeriod(cak.M2_PWR, 1024)
-            pins.analogWritePin(cak.M2_PWR, motorSpeed)
+            pins.digitalWritePin(cakEnergy.M2_DIR, direction)
+            pins.analogSetPeriod(cakEnergy.M2_PWR, 1024)
+            pins.analogWritePin(cakEnergy.M2_PWR, motorSpeed)
         }
     }
 

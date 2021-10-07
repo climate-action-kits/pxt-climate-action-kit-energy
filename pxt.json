@@ -1,14 +1,14 @@
 {
-    "name": "cak",
+    "name": "cak-energy",
     "version": "1.0.1",
-    "description": "Climate Action Kit",
+    "description": "Energy Climate Action Kit",
     "license": "MIT",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "cak.ts",
+        "cak-energy.ts",
         "light.ts",
         "motor.ts",
         "servo.ts",

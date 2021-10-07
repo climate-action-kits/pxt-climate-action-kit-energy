@@ -19,8 +19,8 @@ namespace sonar {
      */
     //% blockId=sonar_ping block="ping trig %trig|echo %echo"
     export function ping(echo: DigitalPin = null, trig: DigitalPin = null, maxCmDistance = 500): number {
-        echo = echo || cak.SONAR_ECHO;
-        trig = trig || cak.SONAR_TRIG;
+        echo = echo || cakEnergy.SONAR_ECHO;
+        trig = trig || cakEnergy.SONAR_TRIG;
         // send pulse
         pins.setPull(trig, PinPullMode.PullNone);
         pins.digitalWritePin(trig, 0);
