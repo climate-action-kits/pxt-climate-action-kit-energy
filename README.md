@@ -8,38 +8,33 @@ More information at https://www.inksmith.ca/pages/energy-climate-action-kits.
 Link to online teacher facing curriculum: https://inksmith.teachable.com/p/energy (for free sign up, use coupon code "ENERGYKIT" at course registration)
 
 ## Example Usage
-To drive forward, then backward
+Plot the number of taps on the touch sensor
 ```blocks
-basic.forever(() => {
-    motor.turnLeft(50)
-    basic.pause(1000)
-    motor.turnLeft(-50)
-    basic.pause(1000)
-    motor.setPowers(MotorPower.OFF)
+let count = 0;
+basic.forever(function () {
+    if (touch.getTap(DigitalPin.P0)) {
+        count ++;
+    }
+    led.plotBarGraph(count % 15, 15);
+});
+```
+Show the light level on the photoresistor, only if there's light
+```blocks
+basic.forever(function () {
+    if (light.getLuminance(light.LightPin.P1) < light.Luminance.Dark) {
+        light.displayLuminance(light.LightPin.P1);
+    } else {
+        basic.showIcon(IconNames.Asleep);
+    };
 })
 ```
-Using the touch sensor to display the current moisture level of the soil.
+Very basic proximity indicator
 ```blocks
 basic.forever(function () {
-        if (touch.getTouch(DigitalPin.P1)) {
-            soil.displayMoisture(AnalogPin.P0)
-      } else {
-         basic.showLeds(`
-             . . . . .
-             . . . . .
-             . . . . .
-             . . . . .
-             . . . . .
-             `)
-        }
-    })
-```
-To oscillate servo at p0 up and down
-```blocks
-basic.forever(function () {
-    servos.setServoPosition(AnalogPin.P0, Position.UP)
-    basic.pause(1000)
-    servos.setServoPosition(AnalogPin.P0, Position.DOWN)
-    basic.pause(1000)
+    if (sonar.isSonar(sonar.Comparison.Closer, 10)) {
+        basic.showIcon(IconNames.SmallSquare);
+    } else {
+        basic.showIcon(IconNames.Square);
+    };
 })
 ```
