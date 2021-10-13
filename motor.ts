@@ -47,7 +47,6 @@ namespace motor {
     //% weight=45
     export function stop(): void {
         drive(0, 0);
-        setPowers(MotorPower.OFF);
     }
 
     /**
@@ -66,20 +65,6 @@ namespace motor {
     }
 
     /**
-    * Turn the motors on/off - default on
-    */
-    //% block
-    //% blockId=motion_power block="turn motors |power: %power"
-    //% weight=20
-    export function setPowers(power: MotorPower): void {
-        motorState = power;
-        for (motor of [Motor.LEFT, Motor.RIGHT]) {
-            pins.analogSetPeriod(pos, motorState && PWM_PERIOD);
-            pins.analogSetPeriod(neg, motorState && PWM_PERIOD);
-        }
-    }
-
-    /**
      * Advanced control of an individual motor. PWM is set to constant value.
      */
     function motorControl(whichMotor: Motor, speed: number): void {
@@ -87,10 +72,10 @@ namespace motor {
         let [pos, neg] = selectMotor(whichMotor);
 
         // drive motors
-        let remappedSpeed: speed * 10;
+        let remappedSpeed = speed * 10;
         // forward: power to neg, reverse: power to pos
-        pins.analogWritePin(neg, Math.abs(Math.max(remappedSpeed, 0)));
-        pins.analogWritePin(pos, Math.abs(Math.min(0, remappedSpeed)));
+        pins.analogWritePin(neg, 1023 - Math.abs(Math.max(remappedSpeed, 0)));
+        pins.analogWritePin(pos, 1023 - Math.abs(Math.min(0, remappedSpeed)));
     }
 
     function selectMotor(whichMotor: Motor): AnalogPin[] {
