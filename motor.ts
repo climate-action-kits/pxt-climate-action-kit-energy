@@ -5,22 +5,16 @@ enum Motor {
     RIGHT = 1
 }
 
-enum MotorDirection {
-    //% block="forward"
-    FORWARD = 0,
-    //% block="reverse"
-    REVERSE = 1
-}
-
 enum MotorPower {
     //% block="on"
-    ON,
+    ON = 1,
     //% block="off"
-    OFF
+    OFF = 0
 }
 
 //% weight=13 color=#ffd43a icon=""
 namespace motor {
+    const PWM_PERIOD = 1000; //totally arbitrary, testing showed no effect
     let motorState: MotorPower = MotorPower.ON
 
     /**
@@ -31,8 +25,7 @@ namespace motor {
     //% speed.min=-100 speed.max=100
     //% weight=60
     export function turnLeft(speed: number): void {
-        motorControl(Motor.RIGHT, 0)
-        motorControl(Motor.LEFT, speed)
+        drive(speed, 0);
     }
 
     /**
@@ -43,8 +36,7 @@ namespace motor {
     //% speed.min=-100 speed.max=100
     //% weight=50
     export function turnRight(speed: number): void {
-        motorControl(Motor.RIGHT, speed)
-        motorControl(Motor.LEFT, 0)
+        drive(0, speed);
     }
 
     /**
@@ -54,8 +46,8 @@ namespace motor {
     //% blockId=motion_stop block="stop motors"
     //% weight=45
     export function stop(): void {
-        motorControl(Motor.LEFT, 0)
-        motorControl(Motor.RIGHT, 0)
+        drive(0, 0);
+        setPowers(MotorPower.OFF);
     }
 
     /**
@@ -80,49 +72,43 @@ namespace motor {
     //% blockId=motion_power block="turn motors |power: %power"
     //% weight=20
     export function setPowers(power: MotorPower): void {
-        if (power == MotorPower.OFF) {
-            motor.stop()
+        motorState = power;
+        for (motor of [Motor.LEFT, Motor.RIGHT]) {
+            pins.analogSetPeriod(pos, motorState && PWM_PERIOD);
+            pins.analogSetPeriod(neg, motorState && PWM_PERIOD);
         }
-        motorState = power
     }
 
     /**
      * Advanced control of an individual motor. PWM is set to constant value.
      */
     function motorControl(whichMotor: Motor, speed: number): void {
-        let motorSpeed: number
-        let direction: MotorDirection
+        // Pick the motor using some magic values
+        let [pos, neg] = selectMotor(whichMotor);
 
-        if (motorState == MotorPower.OFF) {
-            return
-        }
-
-        direction = speed < 0 ? MotorDirection.REVERSE : MotorDirection.FORWARD
-        speed = Math.abs(speed)
-
-        motorSpeed = remapSpeed(speed)
-
-        if (whichMotor == Motor.LEFT) {
-            pins.digitalWritePin(cakEnergy.M1_DIR, direction)
-            pins.analogSetPeriod(cakEnergy.M1_PWR, 1024)
-            pins.analogWritePin(cakEnergy.M1_PWR, motorSpeed)
-        } else {
-            pins.digitalWritePin(cakEnergy.M2_DIR, direction)
-            pins.analogSetPeriod(cakEnergy.M2_PWR, 1024)
-            pins.analogWritePin(cakEnergy.M2_PWR, motorSpeed)
-        }
+        // drive motors
+        let remappedSpeed: speed * 10;
+        // forward: power to neg, reverse: power to pos
+        pins.analogWritePin(neg, Math.abs(Math.max(remappedSpeed, 0)));
+        pins.analogWritePin(pos, Math.abs(Math.min(0, remappedSpeed)));
     }
 
-    // Rescale values from 0 - 100 to 0 - 1023
-    function remapSpeed(s: number): number {
-        let returnSpeed: number
-        if (s <= 0) {
-            returnSpeed = 0
-        } else if (s >= 100) {
-            returnSpeed = 1023
-        } else {
-            returnSpeed = (23200 + (s * 791)) / 100
-        }
-        return returnSpeed;
+    function selectMotor(whichMotor: Motor): AnalogPin[] {
+        let pos : AnalogPin, neg : AnalogPin;
+        switch (whichMotor) {
+            case Motor.LEFT:
+                pos = cakEnergy.M1_POS;
+                neg = cakEnergy.M1_NEG;
+                break;
+            case Motor.RIGHT:
+                pos = cakEnergy.M2_POS;
+                neg = cakEnergy.M2_NEG;
+                break;
+            default:
+                pos = cakEnergy.M1_POS;
+                neg = cakEnergy.M1_NEG;
+                break;
+        };
+        return [pos, neg];
     }
 }
