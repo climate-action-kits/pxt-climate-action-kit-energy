@@ -60,7 +60,8 @@ namespace sonar {
     export function isSonar(Direction: Comparison, range: number): boolean {
         let distance = checkSonar();
         switch (Direction) {
-            case Comparison.Closer: return distance < range;
+            case Comparison.Closer: return distance < range && distance > 0;
+            //a timeout produces a 0 result, while the minimum measurable distance is >0
             case Comparison.Further: return distance > range;
             default: return false;
         }
