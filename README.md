@@ -38,3 +38,10 @@ basic.forever(function () {
     };
 })
 ```
+## Supported Targets
+
+* for PXT/microbit
+
+## License
+
+MIT
