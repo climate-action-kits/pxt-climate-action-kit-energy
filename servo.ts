@@ -22,6 +22,39 @@ namespace servos {
         P12
     }
 
+    export enum MotorPin{
+        //% block="left"
+        Left,
+        //% block="right"
+        Right
+    }
+
+    export enum Power {
+        //% block="off"
+        Off = 0,
+        //% block="on"
+        On = 1,
+    }
+
+    /**
+     * Enable a motor pin for access to 5v instead of the 3.3v on the rest of the breakout board
+     */
+    //% block
+    //% blockId=servo_set block="turn %side motor + pin %state"
+    //% weight=100
+    export function motorPinPower (side: MotorPin, state: Power): void {
+        let pin : DigitalPin;
+        // Pick a pin
+        switch (side) {
+            case MotorPin.Left: pin = cakEnergy.M1_POS; break;
+            case MotorPin.Right: pin = cakEnergy.M2_POS; break;
+            default: pin = null; break;
+        }
+        if (pin) {
+            pins.digitalWritePin(pin, state);
+        }
+    }
+
     /**
      * Function used to return actual AnalogPin from enum
      */
