@@ -3,7 +3,7 @@ Library to interact with the Energy Climate Action Kit
 
 This library provides functions to interface with the components of the InkSmith Energy Climate Action Kit. 
 
-More information at https://www.inksmith.ca/pages/energy-climate-action-kits.
+More information at https://www.inksmith.ca/pages/climate-action-kits.
 
 Link to online teacher facing curriculum: https://inksmith.teachable.com/p/energy (for free sign up, use coupon code "ENERGYKIT" at course registration)
 
