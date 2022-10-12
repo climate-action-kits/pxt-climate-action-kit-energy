@@ -13,7 +13,11 @@
         "motor.ts",
         "servo.ts",
         "sonar.ts",
-        "touch.ts"
+        "touch.ts",
+        "_locales/cak-energy-strings.json",
+        "_locales/cak-energy-jsdoc-strings.json",
+        "_locales/fr/cak-energy-strings.json",
+        "_locales/fr/cak-energy-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
