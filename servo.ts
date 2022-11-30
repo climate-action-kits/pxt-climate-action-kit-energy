@@ -1,16 +1,16 @@
 //% weight=10 color=#ab47bc icon="" block="Servo"
-namespace cakLandServos {
+namespace cakEnergyServos {
   enum Position {
     //% block="up"
     UP = 85,
-      //% block="half up"
-      HALF_UP = 40,
-      //% block="middle"
-      MIDDLE = 0,
-      //% block="half down"
-      HALF_DOWN = -40,
-      //% block="down"
-      DOWN = -85
+    //% block="half up"
+    HALF_UP = 40,
+    //% block="middle"
+    MIDDLE = 0,
+    //% block="half down"
+    HALF_DOWN = -40,
+    //% block="down"
+    DOWN = -85
   }
 
 
@@ -32,15 +32,15 @@ namespace cakLandServos {
   export enum Power {
     //% block="off"
     Off = 0,
-      //% block="on"
-      On = 1,
+    //% block="on"
+    On = 1,
   }
 
     /**
      * Enable a motor pin for access to 5v instead of the 3.3v on the rest of the breakout board
      */
     //% block
-    //% blockId=servo_set block="turn %side motor + pin %state"
+    //% blockId=servo_set_power block="turn %side motor + pin %state"
     //% weight=100
     export function motorPinPower (side: MotorPin, state: Power): void {
       let pin : DigitalPin;
@@ -67,15 +67,13 @@ namespace cakLandServos {
         case ServoPin.P8: return AnalogPin.P8
         case ServoPin.P12: return AnalogPin.P12
       }
-      // Default return if something goes wrong.
-      return AnalogPin.P0
     }
 
     /**
      * Move specified servo to the selected position
      */
     //% block
-    //% blockId=servo_set block="set servo at %pin to |position: %position"
+    //% blockId=servo_set_pos block="set servo at %pin to |position: %position"
     //% weight=60
     export function setServoPosition(pin: ServoPin, position: Position) {
       let n: number = position

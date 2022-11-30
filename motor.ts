@@ -1,32 +1,22 @@
 //% weight=13 color=#ffd43a icon="" block="Motor"
-namespace cakLandMotor {
+namespace cakEnergyMotor {
   enum Motor {
     //% block="left"
     LEFT = 0,
-      //% block="right"
-      RIGHT = 1
+    //% block="right"
+    RIGHT = 1
   }
-
-  enum MotorPower {
-    //% block="on"
-    ON = 1,
-      //% block="off"
-      OFF = 0
-  }
-
-  const PWM_PERIOD = 1000; //totally arbitrary, testing showed no effect
-  let motorState: MotorPower = MotorPower.ON
 
   /**
    *Turns the left motor at a specified speed
    */
-    //% block
-    //% blockId=motion_turn_left block="turn left motor at |speed: %speed"
-    //% speed.min=-100 speed.max=100
-    //% weight=60
-    export function turnLeft(speed: number): void {
-      drive(speed, 0);
-    }
+  //% block
+  //% blockId=motion_turn_left block="turn left motor at |speed: %speed"
+  //% speed.min=-100 speed.max=100
+  //% weight=60
+  export function turnLeft(speed: number): void {
+    drive(speed, 0);
+  }
 
   /**
    *Turns the right motor at a specified speed
@@ -83,16 +73,16 @@ namespace cakLandMotor {
     switch (whichMotor) {
       case Motor.LEFT:
         pos = cakEnergy.M1_POS;
-      neg = cakEnergy.M1_NEG;
-      break;
+        neg = cakEnergy.M1_NEG;
+        break;
       case Motor.RIGHT:
         pos = cakEnergy.M2_POS;
-      neg = cakEnergy.M2_NEG;
-      break;
+        neg = cakEnergy.M2_NEG;
+        break;
       default:
         pos = cakEnergy.M1_POS;
-      neg = cakEnergy.M1_NEG;
-      break;
+        neg = cakEnergy.M1_NEG;
+        break;
     };
     return [pos, neg];
   }

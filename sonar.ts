@@ -2,7 +2,7 @@
  * Sonar and ping utilities
  */
 //% weight=11 color=#ff6f00 icon="" block="Sonar"
-namespace cakLandSonar {
+namespace cakEnergySonar {
   export enum Comparison {
     //% block="closer"
     Closer,

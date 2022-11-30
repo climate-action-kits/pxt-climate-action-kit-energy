@@ -1,18 +1,18 @@
 //% weight=10 icon="\uf185" block="Light"
-namespace cakLandLight {
+namespace cakEnergyLight {
   export enum Luminance {
     //% block="Intense"
     Intense = 25,
-      //% block="Bright"
-      Bright = 65,
-      //% block="Lit"
-      Lit = 100,
-      //% block="Shaded"
-      Shaded = 200,
-      //% block="Dark"
-      Dark = 400,
-      //% block="Lightless"
-      Lightless = 800,
+    //% block="Bright"
+    Bright = 65,
+    //% block="Lit"
+    Lit = 100,
+    //% block="Shaded"
+    Shaded = 200,
+    //% block="Dark"
+    Dark = 400,
+    //% block="Lightless"
+    Lightless = 800,
   }
 
     /*
