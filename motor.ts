@@ -12,8 +12,8 @@ enum MotorPower {
     OFF = 0
 }
 
-//% weight=13 color=#ffd43a icon=""
-namespace motor {
+//% weight=13 color=#ffd43a icon="" block="Motor"
+namespace cakLandMotor {
     const PWM_PERIOD = 1000; //totally arbitrary, testing showed no effect
     let motorState: MotorPower = MotorPower.ON
 

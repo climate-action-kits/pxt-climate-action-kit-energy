@@ -1,5 +1,5 @@
-//% weight=10 icon="\uf185"
-namespace light {
+//% weight=10 icon="\uf185" block="Light"
+namespace cakLandLight {
     export enum Luminance {
         //% block="Intense"
         Intense = 25,

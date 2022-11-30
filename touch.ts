@@ -1,5 +1,5 @@
-//% weight=10 color=#007A4B icon="\uf069"
-namespace touch {
+//% weight=10 color=#007A4B icon="\uf069" block="Touch"
+namespace cakLandTouch {
 
     export enum TouchPin {
         P0,

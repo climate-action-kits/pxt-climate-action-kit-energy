@@ -11,8 +11,8 @@ enum Position {
     DOWN = -85
 }
 
-//% weight=10 color=#ab47bc icon=""
-namespace servos {
+//% weight=10 color=#ab47bc icon="" block="Servo"
+namespace cakLandServos {
 
     export enum ServoPin{
         P0,
